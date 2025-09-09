@@ -30,7 +30,7 @@ The corresponding frontend implementation can be found here:
            -p 5432:5432 \
            -d postgres:15
    
-Run the backend server (default port: 8081):
+2. Run the backend server (default port: 8081):
 ```bash
   ./mvnw spring-boot:run
 ```
