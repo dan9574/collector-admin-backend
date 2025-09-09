@@ -31,8 +31,9 @@ The corresponding frontend implementation can be found here:
            -d postgres:15
    
 Run the backend server (default port: 8081):
-
+```bash
   ./mvnw spring-boot:run
+```
 
 Start the frontend (collector-admin-web) and access the system UI in your browser.
 
