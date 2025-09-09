@@ -1,0 +1,21 @@
+### 登录
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+> {%
+    let body = response.body;
+    // 有的版本是对象，有的是字符串；两种都兼容
+    if (typeof body === 'string') {
+        body = JSON.parse(body);
+    }
+    client.global.set("token", body.token);
+%}
+
+### 访问受保护接口（自动带上上一步保存的 token）
+GET http://localhost:8080/api/profile
+Authorization: Bearer {{token}}
